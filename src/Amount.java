@@ -1,7 +1,6 @@
 public class Amount {
      private double amount;
      private TransactionType transactionType;
-
      //Constructor
     public Amount(double amount,TransactionType transactionType) {
         this.amount = amount;
@@ -17,4 +16,5 @@ public class Amount {
     public String toString(){
         return this.transactionType + " " + this.amount;
     }
+
 }

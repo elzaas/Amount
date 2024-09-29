@@ -30,9 +30,17 @@ public class PersonalAccount {
             this.balance -= amount;
         }
     }
-    public void printTransactionHistory(){
-        System.out.println(accountHolder + accountNumber );
+    public void printTransactionHistory() {
 
+        System.out.println("Transaction History for Account " + accountNumber);
+
+        for (Amount transaction : transactions) {
+            if (transaction.getTransactionType() == TransactionType.DEPOSIT) {
+                System.out.println("Deposit: " + transaction.getAmount());
+            } else if (transaction.getTransactionType() == TransactionType.WITHDRAWAL) {
+                System.out.println("Withdrawal: " + transaction.getAmount());
+            }
+        }
     }
     public int getAccountNumber() {
         return this.accountNumber;
@@ -46,6 +54,7 @@ public class PersonalAccount {
         return this.balance;
 
     }
+
 
 
 
